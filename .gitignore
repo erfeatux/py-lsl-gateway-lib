@@ -1,0 +1,5 @@
+LindenLab.crt
+lsl-lib.venv/
+dist/
+__pycache__/
+*.py[cod]
