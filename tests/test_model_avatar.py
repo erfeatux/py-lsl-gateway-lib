@@ -1,4 +1,4 @@
-from lsl_gw_lib.models import Avatar
+from lslgwlib.models import Avatar
 from pydantic import ValidationError
 import pytest
 import uuid

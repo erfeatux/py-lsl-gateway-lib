@@ -1,4 +1,4 @@
-from lsl_gw_lib.models import Region
+from lslgwlib.models import Region
 from pydantic import ValidationError
 import pytest
 

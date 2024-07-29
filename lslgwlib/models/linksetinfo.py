@@ -3,7 +3,7 @@ from datetime import datetime
 from uuid import UUID
 
 from .avatar import Avatar
-from lsl_gw_lib.enums import AttachPoint
+from lslgwlib.enums import AttachPoint
 
 
 class LinkSetInfo(BaseModel):
