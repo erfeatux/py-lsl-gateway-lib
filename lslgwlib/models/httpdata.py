@@ -17,6 +17,6 @@ class HTTPData(BaseModel):
     production: bool
 
     # response (different by API methods)
-    data: BaseModel | list[BaseModel] | int | float | str
+    data: BaseModel | list[BaseModel] | int | float | str | UUID
     # other http headers
     headers: dict[str, str]
