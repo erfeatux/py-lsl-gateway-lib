@@ -5,6 +5,7 @@ from .priminfo import PrimInfo
 from .httpdata import HTTPData
 from .avatar import Avatar
 from .region import Region
+from .money import Money
 
 
 __all__ = [
@@ -15,4 +16,5 @@ __all__ = [
     "PrimInfo",
     "LinkMessage",
     "ChatMessage",
+    "Money",
 ]
