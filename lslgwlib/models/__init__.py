@@ -6,6 +6,7 @@ from .httpdata import HTTPData
 from .avatar import Avatar
 from .region import Region
 from .money import Money
+from .touch import Touch
 
 
 __all__ = [
@@ -17,4 +18,5 @@ __all__ = [
     "LinkMessage",
     "ChatMessage",
     "Money",
+    "Touch",
 ]
