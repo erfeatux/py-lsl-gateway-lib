@@ -7,6 +7,7 @@ from lslgwlib.enums import AttachPoint
 
 
 class LinkSetInfo(BaseModel):
+    id: UUID
     owner: Avatar
     lastOwnerId: UUID
     creatorId: UUID
