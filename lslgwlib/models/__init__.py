@@ -1,6 +1,7 @@
 from .linksetinfo import LinkSetInfo
 from .linkmessage import LinkMessage
 from .chatmessage import ChatMessage
+from .permissions import Permissions
 from .priminfo import PrimInfo
 from .httpdata import HTTPData
 from .avatar import Avatar
@@ -19,4 +20,5 @@ __all__ = [
     "ChatMessage",
     "Money",
     "Touch",
+    "Permissions",
 ]

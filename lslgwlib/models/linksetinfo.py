@@ -3,6 +3,7 @@ from datetime import datetime
 from uuid import UUID
 
 from .avatar import Avatar
+from .permissions import Permissions
 from lslgwlib.enums import AttachPoint
 
 
@@ -20,3 +21,4 @@ class LinkSetInfo(BaseModel):
     createdAt: datetime
     rezzedAt: datetime
     scriptName: str = Field(pattern=r"[\x20-\x7b\x7d-\x7e]{1, 63}")
+    permissions: Permissions
