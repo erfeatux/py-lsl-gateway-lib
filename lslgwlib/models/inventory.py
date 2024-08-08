@@ -56,6 +56,9 @@ class Invetory(BaseModel):
                 )
         return list(filter(lambda x: (x.type in types), self.items))
 
+    def names(self) -> list[str]:
+        return list(map(lambda x: x.name, self.items))
+
     @property
     def textures(self) -> list[InvetoryItem]:
         return self.byType([InvetoryType.TEXTURE])
