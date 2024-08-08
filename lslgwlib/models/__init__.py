@@ -1,3 +1,4 @@
+from .inventory import Invetory, InvetoryItem
 from .linksetinfo import LinkSetInfo
 from .linkmessage import LinkMessage
 from .chatmessage import ChatMessage
@@ -21,4 +22,6 @@ __all__ = [
     "Money",
     "Touch",
     "Permissions",
+    "Invetory",
+    "InvetoryItem",
 ]

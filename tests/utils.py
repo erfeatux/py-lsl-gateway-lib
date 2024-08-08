@@ -1,9 +1,9 @@
 from random import choices
 
 
-def genStr(len: int = 63, uft8: bool = False) -> str:
+def genStr(len: int = 63, utf8: bool = False) -> str:
     rng = 0x7F
-    if uft8:
+    if utf8:
         rng = 0x7FF
     return str(
         "".join(
