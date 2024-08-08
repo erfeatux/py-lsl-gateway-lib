@@ -11,8 +11,8 @@ from .permissions import Permissions
 class InvetoryItem(BaseModel):
     id: UUID
     type: InvetoryType
-    name: str = Field(pattern=r"^[\x20-\x7b\x7d-\x7e]{1, 63}$")
-    description: str = Field(pattern=r"^[\x20-\x7b\x7d-\x7e]{0, 127}$")
+    name: str = Field(pattern=r"^[\x20-\x7b\x7d-\x7e]{1,63}$")
+    description: str = Field(pattern=r"^[\x20-\x7b\x7d-\x7e]{0,127}$")
     creatorId: UUID
     permissions: Permissions
     acquireTime: datetime

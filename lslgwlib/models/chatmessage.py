@@ -7,7 +7,7 @@ from lslgwlib.enums import ChatChannel
 
 class ChatMessage(BaseModel):
     channel: int = Field(default=ChatChannel.PUBLIC, ge=-0x80000000, le=0x7FFFFFFF)
-    name: str = Field(pattern=r"^[\x20-\x7b\x7d-\x7e]{1, 63}$")
+    name: str = Field(pattern=r"^[\x20-\x7b\x7d-\x7e]{1,63}$")
     id: UUID = Field(default=UUID(int=0))
     message: str = Field(
         min_length=1, max_length=1024, validation_alias=AliasChoices("msg", "message")
