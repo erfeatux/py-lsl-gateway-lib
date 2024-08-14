@@ -6,6 +6,6 @@ import pytest
 
 def test_chatmessage_validator():
     with pytest.raises(ValueError):
-        ChatMessage(name=genStr(), msg=genStr(len=1024, uft8=True))
+        ChatMessage(name=genStr(), msg=genStr(len=1024, utf8=True))
     with pytest.raises(ValidationError):
         ChatMessage(name=genStr(), msg=genStr(len=1025))
