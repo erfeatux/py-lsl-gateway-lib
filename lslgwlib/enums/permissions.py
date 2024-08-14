@@ -1,6 +1,9 @@
 from enum import IntEnum
 
 
+# https://wiki.secondlife.com/wiki/LlGetInventoryPermMask
+
+
 class PermMask(IntEnum):
     BASE = 0  #     The base permissions
     OWNER = 1  #    Current owner permissions

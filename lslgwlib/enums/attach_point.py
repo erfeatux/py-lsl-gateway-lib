@@ -1,6 +1,7 @@
 from enum import IntEnum
 
 
+# https://wiki.secondlife.com/wiki/LlGetAttached
 class AttachPoint(IntEnum):
     NONE = 0
     HEAD = 2  #           Skull                head

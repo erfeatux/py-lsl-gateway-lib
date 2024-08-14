@@ -1,6 +1,7 @@
 from enum import IntEnum
 
 
+# https://wiki.secondlife.com/wiki/Changed
 class Change(IntEnum):
     INVENTORY = 0x001  #        Prim inventory has changed
     COLOR = 0x002  #            Prim color or alpha parameters have changed

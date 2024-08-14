@@ -1,6 +1,7 @@
 from enum import IntEnum
 
 
+# https://wiki.secondlife.com/wiki/LlGetInventoryType
 class InvetoryType(IntEnum):
     ANY = -1  #       any inventory type
     TEXTURE = 0  #    texture

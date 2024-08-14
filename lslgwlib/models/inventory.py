@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field, model_validator
+from typing import Pattern, Sequence
 from datetime import datetime
-from typing import Pattern
 from uuid import UUID
 import re
 
@@ -9,6 +9,8 @@ from .permissions import Permissions
 
 
 class InvetoryItem(BaseModel):
+    """Invetory item model"""
+
     id: UUID
     type: InvetoryType
     name: str = Field(pattern=r"^[\x20-\x7b\x7d-\x7e]{1,63}$")
@@ -19,6 +21,13 @@ class InvetoryItem(BaseModel):
 
 
 class Invetory(BaseModel):
+    """LSL linkset inventory model
+
+    Fields:
+    items -    list of inventory items (InvetoryItem model)
+    filtered - indicates if inventory loaded by items type (not full representation)
+    """
+
     items: list[InvetoryItem] = Field(max_length=10000)
     filtered: InvetoryType = Field(default=InvetoryType.ANY)
 
@@ -32,12 +41,22 @@ class Invetory(BaseModel):
         return self
 
     def byName(self, name: str) -> InvetoryItem | None:
+        """Get item by its name
+
+        Arguments:
+        name - string
+        """
         for x in self.items:
             if x.name == name:
                 return x
         return None
 
     def byNamePattern(self, pattern: str | Pattern) -> list[InvetoryItem]:
+        """Get items by name part or regex
+
+        Arguments:
+        pattern - string part of name or regex
+        """
         items = list()
         for x in self.items:
             if isinstance(pattern, Pattern) and re.match(pattern, x.name):
@@ -46,7 +65,12 @@ class Invetory(BaseModel):
                 items.append(x)
         return items
 
-    def byType(self, types: list[InvetoryType]) -> list[InvetoryItem]:
+    def byType(self, types: Sequence[InvetoryType]) -> list[InvetoryItem]:
+        """Get items by types
+
+        Arguments:
+        types - sequence of types
+        """
         if InvetoryType.ANY in types:
             return self.items
         for bytype in types:

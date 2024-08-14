@@ -6,6 +6,8 @@ from .region import Region
 
 
 class HTTPData(BaseModel):
+    """HTTP request model"""
+
     # info from X-SecondLife-* headers:
     objectKey: UUID
     objectName: str = Field(pattern=r"^[\x20-\x7b\x7d-\x7e]{1,63}$")

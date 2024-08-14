@@ -5,7 +5,13 @@ from uuid import UUID
 from lslgwlib.enums import ChatChannel
 
 
+# https://wiki.secondlife.com/wiki/Listen
 class ChatMessage(BaseModel):
+    """Message from chat model
+
+    Event: listen(integer channel, string name, key id, string message)
+    """
+
     channel: int = Field(default=ChatChannel.PUBLIC, ge=-0x80000000, le=0x7FFFFFFF)
     name: str = Field(pattern=r"^[\x20-\x7b\x7d-\x7e]{1,63}$")
     id: UUID = Field(default=UUID(int=0))

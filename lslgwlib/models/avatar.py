@@ -4,6 +4,8 @@ import re
 
 
 class Avatar(BaseModel):
+    """Avatar model"""
+
     __namePattern = re.compile("^[a-z0-9]{1,31}$", re.IGNORECASE)
     __nameStrPattern = re.compile(
         r"^[a-z0-9]{1,31}((\ |\.)[a-z0-9]{1,31})?$", re.IGNORECASE
@@ -30,15 +32,15 @@ class Avatar(BaseModel):
     def __eq__(self, o) -> bool:
         return self.modernName() == o.modernName() and self.id == o.id
 
-    # get name in legacy format <Firstname Lastname>
     def legacyName(self) -> str:
+        """Get name in legacy format <Firstname Lastname>"""
         ln = self.lastName
         if not ln:
             ln = "Resident"
         return f"{self.firstName} {ln}"
 
-    # get name in modern format <username.resident>
     def modernName(self) -> str:
+        """Get name in modern format <username.resident>"""
         ln = self.lastName
         if ln:
             ln = ln.lower()
